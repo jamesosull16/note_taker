@@ -1,3 +1,6 @@
+const fs = require("fs");
+const cuid = require("cuid");
+
 const noteData = require("../db/db.json");
 
 module.exports = (app) => {
