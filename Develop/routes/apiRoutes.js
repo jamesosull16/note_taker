@@ -8,7 +8,18 @@ module.exports = (app) => {
 
   //think this needs some work
   app.post("/api/notes", (req, res) => {
-    noteData.push(req.body);
-    res.join(true);
+    const id = cuid();
+    noteData.push({ ...req.body, id });
+
+    fs.writeFileSync("Develop/db/db.json", JSON.stringify(noteData));
+
+    res.json(noteData);
+  });
+
+  app.delete("/api/notes/:id", (req, res) => {
+    const id = req.params.id;
+    const newData = noteData.filter((note) => note.id !== id);
+    fs.writeFileSync("Develop/db/db.json", JSON.stringify(newData));
+    res.json(newData);
   });
 };
