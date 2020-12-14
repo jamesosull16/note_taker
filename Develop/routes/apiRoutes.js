@@ -1,5 +1,6 @@
 const fs = require("fs");
 const cuid = require("cuid");
+const util = require("util");
 
 const noteData = require("../db/db.json");
 
@@ -20,6 +21,7 @@ module.exports = (app) => {
     const id = req.params.id;
     const newData = noteData.filter((note) => note.id !== id);
     fs.writeFileSync("Develop/db/db.json", JSON.stringify(newData));
-    res.json(newData);
+    console.log(newData);
+    res.send(JSON.stringify(newData));
   });
 };

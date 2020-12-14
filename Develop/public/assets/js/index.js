@@ -4,6 +4,7 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+//dynamically creating the HTML elements for notes.html
 if (window.location.pathname === "/notes") {
   noteTitle = document.querySelector(".note-title");
   noteText = document.querySelector(".note-textarea");
@@ -82,8 +83,6 @@ const handleNoteDelete = (e) => {
 
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute("data-note")).id;
-  console.log(note.parentElement.getAttribute("data-note"));
-  console.log(note);
 
   if (activeNote.id === noteId) {
     activeNote = {};
