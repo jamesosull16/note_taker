@@ -26,6 +26,6 @@ Taking notes throughout the day will help keep you organized and on track. Wheth
 
 ## Resources
 
-Heroku
-W3 Schools
-[Node Documentation](https://nodejs.org/en/)
+- Heroku
+- W3 Schools
+- [Node Documentation](https://nodejs.org/en/)
